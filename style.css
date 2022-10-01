@@ -1,6 +1,5 @@
 /*---------------------------- GOOGLE FONTS ----------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Explora&family=IBM+Plex+Sans:wght@200&display=swap');
 /*----------------------------------- GLOBALES --------------------------------------------*/
 * {
     margin: 0;
@@ -8,7 +7,7 @@
     box-sizing: border-box;
     --webkit-box-sizing: border-box;
     --moz-box-sizing: border-box;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 html{
     scroll-behavior: smooth;
@@ -35,8 +34,10 @@ html{
     align-items: center;
     padding: 0px 30px;
     height: 70px;
-    --webkit-background-size: cover;
-    background-size: cover;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    z-index: 5;
 }
 
 .container .logo {
@@ -107,14 +108,14 @@ html{
 /*----------------------------------- HOME -------------------------------------------------*/
 .container .main {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: 100vh;
     background-image: url(img/soli.jfif);
     background-repeat: no-repeat;
     background-position: right center;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    --webkit-background-size: cover;
+    padding-top: 70px ;
     background-size: cover;
 }
 
@@ -133,7 +134,7 @@ html{
     color: #dedce1;
     font-size: 50px;
     padding: 8px 0px;
-    font-family: 'Courgette', cursive;
+    font-family: 'Explora', cursive;
     letter-spacing: 3px;
     text-transform: uppercase;
     text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
@@ -141,8 +142,7 @@ html{
 
 .infoText h1 span {
     color: darkorange;
-    padding-left: 10px;
-    font-family: 'Courgette', cursive;
+    font-family: 'Explora', cursive;
 }
 
 .infoText button {
@@ -189,8 +189,7 @@ html{
     background-color: #45413B;
     height: 100vh;
     letter-spacing: 1px;
-    --webkit-background-size: cover;
-    background-size: cover;
+    padding-bottom: 30px;
 }
 
 .about-container {
@@ -203,39 +202,6 @@ html{
     grid-template-columns: 2fr 5fr;
     grid-gap: 70px;
 }
-
-@media (max-width: 960px) {
-    .about-container .about-contents {
-        display: grid;
-        grid-template-columns: 2fr;
-        grid-gap: 70px;
-    }   
-}
-
-@media (max-width: 560px) {
-    .about {
-        width: 100%;
-        height:100vh ;
-        padding-left: 10px;
-       text-align: center;
-        
-    }
-    .about-container .about-contents {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-        width: 100%;
-        
-    } 
-    .infoSection h1 {
-        display: block;
-        font-size: 20px;
-        text-transform: uppercase;
-         
-    }
-}
-
-
 
 .about-contents.imageSection {
     position: relative;
@@ -310,24 +276,6 @@ html{
     padding-bottom: 8px;
 }
 
-.personalInfo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px 20px;
-    margin-top: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #555;
-}
-
-.personalInfo div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.personalInfo div span {
-    color: #dedce1;
-    letter-spacing: 1px;
-}
-
 .infoSection button {
     min-width: 150px;
     padding: 8px 18px;
@@ -359,7 +307,8 @@ section.skills {
     gap:170px;
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 110px;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 .skill h2 {
@@ -409,8 +358,9 @@ section.skills {
 .portfolio {
    padding-top: 50px;
     background-color: #45413B;
-    padding-bottom: 80px;
-    
+    padding-bottom: 0px;
+    width: 100%;
+    height: 100%;  
 }
 
 .portfolio-section h2{
@@ -425,13 +375,13 @@ section.skills {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,auto));
     gap:15px;
-    width: 80%;
+    width: 70%;
     margin:0 auto;
 }
 
 .portfolio-grid img {
     width: 100%;
-    height: 90%;
+    height: 80%;
     border-radius: 10px;
     transition: transform 0.4s ease;
     cursor: pointer;
@@ -525,23 +475,54 @@ section.skills {
     background-color: #f29718;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+footer {
+    padding: 40px 0;
+    background-color: #000000;
+  }
+  footer .socialfooter {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #dedce1;
+  }
+  footer .socialfooter a {
+    text-align: center;
+    margin: 0 8px;
+  }
+  footer .copyright {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #dedce1;
+  }
 
 /*----------------------------------------- MEDIAQUERIES ------------------------------------*/
+@media (max-width: 960px) {
+    .about-container .about-contents {
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-gap: 70px;
+    }   
+}
+
+@media (max-width: 560px) {
+    .about {
+        width: 100%;
+        height:100vh ;
+        padding-left: 10px;
+       text-align: center;
+    }
+    .about-container .about-contents {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        width: 100%;  
+    } 
+    .infoSection h1 {
+        font-size: 20px;
+         
+    }
+}
+
 @media (max-width: 768px){
     .menu #menuBtn{
         display: block;
@@ -552,7 +533,7 @@ section.skills {
         width: 250px;
         height: calc(100vh - 70px);
         top: 70px;
-        right: -0px;
+        right: -50px;
         background-color: #232323;
         border-radius: 30% 0% 0% 80%;
         display: flex;
